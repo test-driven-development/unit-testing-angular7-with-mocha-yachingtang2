@@ -14,7 +14,7 @@ describe('message service', () => {
   it(`adds a message`, () => {
     const service = new MessageService();
     service.add('dummy');
-    service.messages.length.should.equal(0);
+    service.messages.length.should.equal(1);
   });
 
   it(`clears all messages`);
