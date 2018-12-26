@@ -1,6 +1,6 @@
-import {AppComponent} from '../src/app/app.component';
-import {BookFormComponent} from '../src/app/book-form.component';
-import {AppService} from '../src/app/app.service';
+import {AppComponent} from './app/app.component';
+import {BookFormComponent} from './app/book-form.component';
+import {AppService} from './app/app.service';
 import {ComponentFixture, getTestBed, TestBed} from '@angular/core/testing';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
