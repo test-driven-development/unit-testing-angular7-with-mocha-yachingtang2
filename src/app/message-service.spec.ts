@@ -17,5 +17,10 @@ describe('message service', () => {
     service.messages.length.should.equal(1);
   });
 
-  it(`clears all messages`);
+  it(`clears all messages`, () => {
+    const service = new MessageService();
+    service.add('dummy');
+    service.clear();
+    service.messages.length.should.equal(1);
+  });
 });
