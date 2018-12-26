@@ -21,6 +21,6 @@ describe('message service', () => {
     const service = new MessageService();
     service.add('dummy');
     service.clear();
-    service.messages.length.should.equal(1);
+    service.messages.length.should.equal(0);
   });
 });
