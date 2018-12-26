@@ -11,6 +11,11 @@ describe('message service', () => {
     service.messages.length.should.equal(0);
   });
 
-  it(`adds a message`);
+  it(`adds a message`, () => {
+    const service = new MessageService();
+    service.add('dummy');
+    service.messages.length.should.equal(0);
+  });
+
   it(`clears all messages`);
 });
