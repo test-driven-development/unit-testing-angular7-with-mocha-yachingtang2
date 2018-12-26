@@ -7,7 +7,10 @@ describe('strength pipe', () => {
         `-10000000 (weak)`);
   });
 
-  it(`gives 'strong' for 10 <= n < 20`);
+  it(`gives 'strong' for 10 <= n < 20`, () => {
+    (new StrengthPipe()).transform(30).should.equal(`10 (strong)`);
+  });
+
   it(`gives 'unbelievable' for n >= 20`);
 });
 
