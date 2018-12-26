@@ -28,7 +28,7 @@ git fetch --all
 yarn install
 ```
 
-### checkout the solution branch and review the commit log to see how to proceed
+### checkout the solutions branch and review the commit log to see how to proceed
 
 
 ### checkout the exercises branch and begin with video-13
