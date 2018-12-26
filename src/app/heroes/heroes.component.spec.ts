@@ -30,9 +30,11 @@ describe('heroes', () => {
     component.heroes.length.should.equal(2);
 
     // act
-    component.delete(hs[0]);
-    // assert
-    component.heroes.length.should.equal(1);
+    return component.delete(hs[0]).then((hero) => {
+      // assert
+      component.heroes.length.should.equal(1);
+      component.heroes.should.not.containDeep(hero);
+    });
   });
 });
 
