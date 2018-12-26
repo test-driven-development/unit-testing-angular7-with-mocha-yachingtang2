@@ -6,5 +6,3 @@ describe('automated test infrastructure', () => {
   });
 });
 
-export {};
-
