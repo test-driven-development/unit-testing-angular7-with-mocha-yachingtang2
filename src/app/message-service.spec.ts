@@ -8,7 +8,7 @@ describe('message service', () => {
 
   it(`starts with no messages`, () => {
     const service = new MessageService();
-    service.messages.length.should.equal(1);
+    service.messages.length.should.equal(0);
   });
 
   it(`adds a message`);
