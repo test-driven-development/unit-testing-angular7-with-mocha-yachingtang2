@@ -32,7 +32,7 @@ describe('heroes', () => {
     // act
     component.delete(hs[0]);
     // assert
-    component.heroes.length.should.equal(0);
+    component.heroes.length.should.equal(1);
   });
 });
 
