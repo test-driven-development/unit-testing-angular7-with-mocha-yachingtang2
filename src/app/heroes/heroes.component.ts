@@ -14,12 +14,13 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.getHeroes().then(heroes => this.heroes = heroes);
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+  getHeroes(): Promise<Hero[]> {
+    return this.heroService.getHeroes().toPromise().then(heroes => {
+      return heroes;
+    });
   }
 
   add(name: string): void {
@@ -37,4 +38,10 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero).subscribe();
   }
 
+  // delete(hero: Hero): Promise<any> {
+  //   return this.heroService.deleteHero(hero).toPromise().then(() => {
+  //     this.heroes = this.heroes.filter(h => h !== hero);
+  //     // return hero;
+  //   });
+  // }
 }
