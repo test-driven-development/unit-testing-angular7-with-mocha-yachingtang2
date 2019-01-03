@@ -122,4 +122,5 @@
     "instrument": false,
     "sourceMap": false,
     "report-dir": "./reports/coverage"
-  }}
+  }
+}
