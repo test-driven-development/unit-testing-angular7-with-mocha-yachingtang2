@@ -36,5 +36,19 @@ describe('HeroesComponent', () => {
     });
   });
 
-  it('delete a hero when delete is called');
+  it('delete a hero when delete is called', () => {
+    const heroes = [{id: 1, name: 'a', strength: 8}, {id: 2, name: 'b', strength: 24}];
+
+    const heroService = new (constructor(require('../hero.service').HeroService))();
+
+    when(heroService.deleteHero(heroes[0])).thenReturn(of(heroes[0]));
+
+    const heroesComponent = new HeroesComponent(heroService);
+    heroesComponent.heroes = heroes;
+
+    heroesComponent.delete(heroes[0]).then(() => {
+      heroesComponent.heroes.length.should.equal(1);
+      heroesComponent.heroes.should.not.containDeep(heroes[0]);
+    });
+  });
 });
