@@ -17,5 +17,9 @@ describe('StrengthPipe', () => {
     strengthPipe.transform(11).should.equal('11 (strong)');
   });
 
-  it('show strength 21 is unbelievable');
+  it('show strength 21 is unbelievable', () => {
+    const strengthPipe = new StrengthPipe();
+
+    strengthPipe.transform(21).should.equal('21 (unbelievable)');
+  });
 });
