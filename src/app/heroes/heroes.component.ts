@@ -14,12 +14,12 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
-    this.getHeroes().then(heroes => this.heroes = heroes);
+    this.getHeroes().then();
   }
 
-  getHeroes(): Promise<Hero[]> {
+  getHeroes(): Promise<void> {
     return this.heroService.getHeroes().toPromise().then(heroes => {
-      return heroes;
+      this.heroes = heroes;
     });
   }
 

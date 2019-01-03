@@ -14,13 +14,13 @@ describe('HeroesComponent', () => {
 
     const heroesComponent = new HeroesComponent(heroService);
 
-    heroesComponent.getHeroes().then(heroesFromService => {
-      heroesFromService.length.should.equal(2);
-      heroesFromService.should.deepEqual(heroes);
+    heroesComponent.getHeroes().then(() => {
+      heroesComponent.heroes.length.should.equal(2);
+      heroesComponent.heroes.should.deepEqual(heroes);
     });
   });
 
-  it.only('add a hero to existing heroes when add() is called', () => {
+  it('add a hero to existing heroes when add() is called', () => {
     const heroes = [{id: 1, name: 'a', strength: 8}, {id: 2, name: 'b', strength: 24}];
     const heroService = new (constructor(require('../hero.service').HeroService))();
     const hero = {id: 3, name: 'c', strength: 11};
