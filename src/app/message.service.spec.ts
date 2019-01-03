@@ -12,5 +12,12 @@ describe('MessageService', () => {
     messageService.messages.length.should.equal(1);
   });
 
-  it('clear message, the length is 0');
+  it('clear message, the length is 0', () => {
+    const messageService = new MessageService();
+    messageService.add('testing');
+
+    messageService.clear();
+
+    messageService.messages.length.should.equal(0);
+  });
 });
